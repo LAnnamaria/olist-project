@@ -27,7 +27,6 @@ class Order:
         orders['expected_wait_time'] = ((orders['order_estimated_delivery_date']-orders['order_purchase_timestamp'])/np.timedelta64(1,'D'))
         orders['delay_vs_expected'] = ((orders['order_delivered_customer_date']-orders['order_estimated_delivery_date'])/np.timedelta64(1,'D'))
         orders = orders[['order_id','wait_time','expected_wait_time','delay_vs_expected','order_status']]
-        # Hint: Within this instance method, you have access to the instance of the class Order in the variable self, as well as all its attributes
         return orders
 
     def get_review_score(self):
